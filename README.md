@@ -14,6 +14,37 @@ A custom Home Assistant Lovelace card that displays tariff data with a dynamic c
 
 ---
 
+## Configuration
+
+### Example Lovelace Configuration
+```yaml
+type: custom:tariff-chart-card
+currentTimeLine:
+  labelColor: "#000000"
+tariffs:
+  - name: Low Tariff
+    value: 24.00
+    timeFrames:
+      - "02:00-06:00"
+      - "12:00-16:00"
+    color: "#00E5FF"
+  - name: Medium Tariff
+    value: 31.00
+    timeFrames:
+      - "00:00-02:00"
+      - "06:00-12:00"
+      - "16:00-18:00"
+      - "21:00-24:00"
+    color: "#FF9800"
+  - name: High Tariff
+    value: 36.00
+    timeFrames:
+      - "18:00-21:00"
+    color: "#FF5252"
+```
+
+---
+
 ## Installation
 
 ### Option 1: Manual Installation
@@ -47,10 +78,10 @@ A custom Home Assistant Lovelace card that displays tariff data with a dynamic c
 1. **Add Custom Repository**:
    - Go to **HACS > Integrations > Custom Repositories**.
    - Add the URL of the repository hosting the `tariff_chart` files.
-   - Select the category as **Frontend**.
+   - Select the category as **Dashboard**.
 
 2. **Install the Card**:
-   - Search for `Tariff Chart Card` in HACS under the **Frontend** section.
+   - Search for `Tariff Chart Card` in HACS under the **Dashboard** section.
    - Install the card.
 
 3. **Add the Card to Lovelace Resources**:
@@ -62,37 +93,6 @@ A custom Home Assistant Lovelace card that displays tariff data with a dynamic c
 
 4. **Restart Home Assistant**:
    Restart Home Assistant to ensure the card is loaded.
-
----
-
-## Configuration
-
-### Example Lovelace Configuration
-```yaml
-type: custom:tariff-chart-card
-currentTimeLine:
-  labelColor: "#000000"
-tariffs:
-  - name: Low Tariff
-    value: 24.00
-    timeFrames:
-      - "02:00-06:00"
-      - "12:00-16:00"
-    color: "#00E5FF"
-  - name: Medium Tariff
-    value: 31.00
-    timeFrames:
-      - "00:00-02:00"
-      - "06:00-12:00"
-      - "16:00-18:00"
-      - "21:00-24:00"
-    color: "#FF9800"
-  - name: High Tariff
-    value: 36.00
-    timeFrames:
-      - "18:00-21:00"
-    color: "#FF5252"
-```
 
 ---
 

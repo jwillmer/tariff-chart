@@ -1,6 +1,7 @@
 {
   "name": "Tariff Chart Card",
-  "content_in_root": false,
+  "content_in_root": true,
   "filename": "tariff_chart.js",
-  "render_readme": true
+  "render_readme": true,
+  "zip_release": false
 }
