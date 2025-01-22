@@ -43,11 +43,49 @@ tariffs:
     color: "#FF5252"
 ```
 
+### Current Time Line
+- **`labelColor`** (Optional):
+  - Default: `"#000000"`
+  - Description: Text color of the current time label.
+
+### Tariffs
+- **`tariffs`** (Required):
+  - Description: Defines the tariff zones.
+  - Each tariff requires:
+    - **`name`**: Name of the tariff (e.g., Low Tariff).
+    - **`value`**: Price of the tariff in `ct/kWh`.
+    - **`timeFrames`**: Time ranges for the tariff (e.g., `"02:00-06:00"`).
+    - **`color`**: Color for the tariff zone in the chart.
+
 ---
 
 ## Installation
 
-### Option 1: Manual Installation
+### Option 1: Automatic
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=jwillmer&repository=tariff-chart-card&category=plugin)
+
+### Option 2: Installation via HACS
+
+1. **Add Custom Repository**:
+   - Go to **HACS > Integrations > Custom Repositories**.
+   - Add the URL of the repository hosting the `tariff_chart` files.
+   - Select the category as **Dashboard**.
+
+2. **Install the Card**:
+   - Search for `Tariff Chart Card` in HACS under the **Dashboard** section.
+   - Install the card.
+
+3. **Add the Card to Lovelace Resources**:
+   HACS should automatically add the resource, but verify it:
+   ```yaml
+   url: /hacsfiles/tariff_chart/tariff_chart.js
+   type: module
+   ```
+
+4. **Restart Home Assistant**:
+   Restart Home Assistant to ensure the card is loaded.
+
+### Option 3: Manual Installation
 
 1. **Download the Files**:
    - Place the `tariff_chart.js` file in your Home Assistant's `www` directory.
@@ -72,45 +110,6 @@ tariffs:
 
 3. **Restart Home Assistant**:
    Restart Home Assistant to load the new custom card.
-
-### Option 2: Installation via HACS
-
-1. **Add Custom Repository**:
-   - Go to **HACS > Integrations > Custom Repositories**.
-   - Add the URL of the repository hosting the `tariff_chart` files.
-   - Select the category as **Dashboard**.
-
-2. **Install the Card**:
-   - Search for `Tariff Chart Card` in HACS under the **Dashboard** section.
-   - Install the card.
-
-3. **Add the Card to Lovelace Resources**:
-   HACS should automatically add the resource, but verify it:
-   ```yaml
-   url: /hacsfiles/tariff_chart/tariff_chart.js
-   type: module
-   ```
-
-4. **Restart Home Assistant**:
-   Restart Home Assistant to ensure the card is loaded.
-
----
-
-## Configuration Options
-
-### Current Time Line
-- **`labelColor`** (Optional):
-  - Default: `"#000000"`
-  - Description: Text color of the current time label.
-
-### Tariffs
-- **`tariffs`** (Required):
-  - Description: Defines the tariff zones.
-  - Each tariff requires:
-    - **`name`**: Name of the tariff (e.g., Low Tariff).
-    - **`value`**: Price of the tariff in `ct/kWh`.
-    - **`timeFrames`**: Time ranges for the tariff (e.g., `"02:00-06:00"`).
-    - **`color`**: Color for the tariff zone in the chart.
 
 ---
 
