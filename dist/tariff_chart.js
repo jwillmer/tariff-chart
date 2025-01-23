@@ -34,13 +34,27 @@ class TariffChartCard extends HTMLElement {
   async _renderChart() {
     if (!window.Chart) {
       const script = document.createElement("script");
-      script.src = "/local/tariff_chart/chartjs/chart.js";
+      script.src = "/hacsfiles/tariff-chart/chartjs/chart.js";
+      
+      annotationScript.onerror = () => {
+        // Fallback to manual installation path
+        annotationScript.src = "/local/tariff_chart/chartjs/chart.js";
+        document.head.appendChild(annotationScript);
+      };     
+      
       document.head.appendChild(script);
       await new Promise((resolve) => (script.onload = resolve));
     }
     if (!window.ChartAnnotation) {
       const annotationScript = document.createElement("script");
-      annotationScript.src = "/local/tariff_chart/chartjs/chartjs-plugin-annotation.js";
+      annotationScript.src = "/hacsfiles/tariff-chart/chartjs/chartjs-plugin-annotation.js";
+        
+      annotationScript.onerror = () => {
+        // Fallback to manual installation path
+        annotationScript.src = "/local/tariff_chart/chartjs/chartjs-plugin-annotation.js";
+        document.head.appendChild(annotationScript);
+      };
+      
       document.head.appendChild(annotationScript);
       await new Promise((resolve) => (annotationScript.onload = resolve));
     }
