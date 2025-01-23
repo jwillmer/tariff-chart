@@ -2,7 +2,7 @@
 
 A custom Home Assistant Lovelace card that displays tariff data with a dynamic chart. This card visualizes tariff zones and their prices, highlighting the current zone with a customizable line indicator.
 
-![Tariff Chart Card](./tariff_chart.png)
+![Tariff Chart](./tariff_chart.png)
 
 ---
 
