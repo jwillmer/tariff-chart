@@ -36,10 +36,10 @@ class TariffChartCard extends HTMLElement {
       const script = document.createElement("script");
       script.src = "/hacsfiles/tariff-chart/chartjs/chart.js";
       
-      annotationScript.onerror = () => {
+      script.onerror = () => {
         // Fallback to manual installation path
-        annotationScript.src = "/local/tariff_chart/chartjs/chart.js";
-        document.head.appendChild(annotationScript);
+        script.src = "/local/tariff_chart/chartjs/chart.js";
+        document.head.appendChild(script);
       };     
       
       document.head.appendChild(script);
