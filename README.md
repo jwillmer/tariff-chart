@@ -54,7 +54,7 @@ tariffs:
 
 ### Y-Axis
 - **`min`** (Optional):
-  - Default: Automatically calculated as 5 units above the lowest tariff value
+  - Default: Automatically calculated as 5 units below the lowest tariff value
   - Description: Sets a fixed minimum value for the y-axis. If not specified, a dynamic minimum will be calculated.
 - **`currency`** (Optional):
   - Default: `"ct/kWh"`

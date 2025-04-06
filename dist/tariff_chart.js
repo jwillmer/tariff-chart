@@ -85,7 +85,7 @@ class TariffChartCard extends HTMLElement {
       yAxisMin = this.config.yAxis.min;
     } else {
       const minTariffValue = Math.min(...tariffs.map(tariff => tariff.value));
-      yAxisMin = minTariffValue + 5;
+      yAxisMin = minTariffValue - 5;
     }
 
     const datasets = tariffs.map((tariff) => {
