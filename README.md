@@ -24,6 +24,7 @@ currentTimeLine:
   labelColor: "#000000"
 yAxis:
   min: 15
+  currency: "$/kWh"
 tariffs:
   - name: Low Tariff
     value: 24.00
@@ -55,6 +56,9 @@ tariffs:
 - **`min`** (Optional):
   - Default: Automatically calculated as 5 units above the lowest tariff value
   - Description: Sets a fixed minimum value for the y-axis. If not specified, a dynamic minimum will be calculated.
+- **`currency`** (Optional):
+  - Default: `"ct/kWh"`
+  - Description: Sets the currency unit displayed on the y-axis label.
 
 ### Tariffs
 - **`tariffs`** (Required):
