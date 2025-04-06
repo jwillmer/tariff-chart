@@ -9,7 +9,7 @@ class TariffChartCard extends HTMLElement {
       },
       yAxis: {
         min: config.yAxis?.min,
-        currency: config.yAxis?.currency || "ct/kWh",
+        title: config.yAxis?.title || "Tariff (ct/kWh)",
       },
       tariffs: config.tariffs
     };
@@ -184,7 +184,7 @@ class TariffChartCard extends HTMLElement {
               min: yAxisMin,
               title: {
                 display: true,
-                text: `Tariff (${this.config.yAxis.currency})`,
+                text: this.config.yAxis.title,
                 color: "#ffffff"
               },
               ticks: {
