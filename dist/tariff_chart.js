@@ -7,6 +7,9 @@ class TariffChartCard extends HTMLElement {
       currentTimeLine: {
         borderColor: config.currentTimeLine?.borderColor || "#00BFFF",
       },
+      yAxis: {
+        min: config.yAxis?.min,
+      },
       tariffs: config.tariffs
     };
   }
@@ -76,6 +79,14 @@ class TariffChartCard extends HTMLElement {
     }
     timePoints.push("24:00");
   
+    let yAxisMin;
+    if (this.config.yAxis?.min !== undefined) {
+      yAxisMin = this.config.yAxis.min;
+    } else {
+      const minTariffValue = Math.min(...tariffs.map(tariff => tariff.value));
+      yAxisMin = minTariffValue + 5;
+    }
+
     const datasets = tariffs.map((tariff) => {
       const data = Array(timePoints.length).fill(null);
 
@@ -169,7 +180,7 @@ class TariffChartCard extends HTMLElement {
               }
             },
             y: {
-              min: 20,
+              min: yAxisMin,
               title: {
                 display: true,
                 text: "Tariff (ct/kWh)",

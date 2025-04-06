@@ -10,6 +10,7 @@ A custom Home Assistant Lovelace card that displays tariff data with a dynamic c
 
 - Visualize multiple tariff zones with time frames and prices.
 - Highlight the current time zone dynamically.
+- Dynamic y-axis scaling that adjusts to tariff values, with option for fixed minimum.
 - Fully responsive and configurable card size.
 
 ---
@@ -21,6 +22,8 @@ A custom Home Assistant Lovelace card that displays tariff data with a dynamic c
 type: custom:tariff-chart-card
 currentTimeLine:
   labelColor: "#000000"
+yAxis:
+  min: 15
 tariffs:
   - name: Low Tariff
     value: 24.00
@@ -47,6 +50,11 @@ tariffs:
 - **`labelColor`** (Optional):
   - Default: `"#000000"`
   - Description: Text color of the current time label.
+
+### Y-Axis
+- **`min`** (Optional):
+  - Default: Automatically calculated as 5 units above the lowest tariff value
+  - Description: Sets a fixed minimum value for the y-axis. If not specified, a dynamic minimum will be calculated.
 
 ### Tariffs
 - **`tariffs`** (Required):
@@ -122,4 +130,3 @@ tariffs:
 2. **Chart Not Displayed**:
    - Check if the required Chart.js libraries are in `/config/www/tariff_chart/chartjs/`.
    - Ensure the file names and paths match those in the configuration.
-
